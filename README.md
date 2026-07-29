@@ -50,5 +50,3 @@ A beautiful, full-featured Rock-Paper-Scissors game built with Django 4.x and mo
    http://127.0.0.1:8000/
    ```
 
-🎉 **You're ready to play!**
-
