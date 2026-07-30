@@ -47,6 +47,13 @@ def play_move(request):
     determines the winner, updates scores, and returns the result.
     """
     try:
+        # Initialize session data if not present
+        if 'player_score' not in request.session:
+            request.session['player_score'] = 0
+            request.session['computer_score'] = 0
+            request.session['draw_score'] = 0
+            request.session['game_history'] = []
+
         # Parse the JSON data from the request
         data = json.loads(request.body)
         player_choice = data.get('choice')
