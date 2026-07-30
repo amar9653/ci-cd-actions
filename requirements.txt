@@ -1,7 +1,7 @@
 # Django Rock Paper Scissors Game Requirements
 # Compatible with Python 3.10+
 
-Django==6.0.7
+Django==5.2.6
 asgiref==3.12.1
 sqlparse==0.5.5
 tzdata==2023.3
