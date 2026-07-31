@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  Lint:
 
     runs-on: self-hosted
 
@@ -34,7 +34,7 @@ jobs:
   Test:
 
     runs-on: self-hosted
-    needs: build
+    needs: Lint
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python 3.10
@@ -49,3 +49,20 @@ jobs:
     - name: Run Test with pytest
       run: |
         pytest
+
+  Build:
+
+    runs-on: self-hosted
+    needs: Test
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+    - name: Docker image build
+      run: |
+        docker build -t RPS_app .
+    - name: Docker container run
+      run: |
+        docker run -d --name RPS_app -p 8000:8000 RPS_app
