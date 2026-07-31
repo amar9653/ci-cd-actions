@@ -66,3 +66,18 @@ jobs:
     - name: Docker container run
       run: |
         docker run -d --name rps_app -p 8000:8000 rps_app
+        
+  deploy:
+    runs-on: self-hosted
+    needs: Build
+    steps:
+    - name: Simulate Deployment
+      run: |
+        echo "Deploying application to staging..."
+        mkdir -p staging
+        echo "Deployment Successful" > staging/deployment.txt
+    - name: Upload Deployment Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: staging-files
+        path: staging/
