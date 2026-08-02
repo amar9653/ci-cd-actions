@@ -283,12 +283,12 @@ class RockPaperScissorsGame {
                 break;
             case 'lose':
                 resultDisplay.classList.add('lose');
-                resultText.textContent = '😔 bahut dukh hua';
+                resultText.textContent = '😔 Harr gaye aap';
                 resultDescription.textContent = this.getWinDescription(computerChoice, playerChoice);
                 break;
             case 'draw':
                 resultDisplay.classList.add('draw');
-                resultText.textContent = '🤝 Barabari ';
+                resultText.textContent = '🤝 Equally  ';
                 resultDescription.textContent = `Both chose ${playerChoice}`;
                 break;
         }
