@@ -278,12 +278,12 @@ class RockPaperScissorsGame {
         switch (result) {
             case 'win':
                 resultDisplay.classList.add('win');
-                resultText.textContent = '🎉 Jeet gaye Aap';
+                resultText.textContent = '🎉 7 crore milenge';
                 resultDescription.textContent = this.getWinDescription(playerChoice, computerChoice);
                 break;
             case 'lose':
                 resultDisplay.classList.add('lose');
-                resultText.textContent = '😔 Haar gaye Aap';
+                resultText.textContent = '😔 bahut dukh hua';
                 resultDescription.textContent = this.getWinDescription(computerChoice, playerChoice);
                 break;
             case 'draw':
