@@ -288,7 +288,7 @@ class RockPaperScissorsGame {
                 break;
             case 'draw':
                 resultDisplay.classList.add('draw');
-                resultText.textContent = '🤝 Equally  ';
+                resultText.textContent = '🤝 Equally barabar  ';
                 resultDescription.textContent = `Both chose ${playerChoice}`;
                 break;
         }
